@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
     selector: 'toolPane',
@@ -9,4 +10,8 @@ export class ToolPaneComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
+
+    tabChangeHandler(event: MatTabChangeEvent) {
+        console.log(event)
+    }
 }

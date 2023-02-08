@@ -6,12 +6,16 @@ import routes from './editor.routing'
 import { ToolPaneComponent } from './components/toolPane/toolPane.component'
 import { ConfigSidebarComponent } from './components/configSidebar/configSidebar.component'
 import { GraphAreaComponent } from './components/graphArea/graphArea.component'
+import { InitializationService } from './services/initialization.service'
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+    MatTabsModule
+  ], 
+  providers: [InitializationService]
 })
 export class EditorModule { }

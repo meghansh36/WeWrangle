@@ -3,3 +3,8 @@
     background-color: #d9eeff;
     width: 100%;
 }
+
+::ng-deep .mat-mdc-tab.mdc-tab
+{
+  height: 25px !important;
+}

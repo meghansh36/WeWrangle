@@ -1,6 +1,14 @@
 
 <div class="container">
     
+    <div class="tooltab-container">
+        <mat-tab-group (selectedTabChange)="tabChangeHandler($event)">
+            <mat-tab label="Input"></mat-tab>
+            <mat-tab label="Transform"></mat-tab>
+            <mat-tab label="Output"></mat-tab>
+        </mat-tab-group>
+    </div>
+
     <div class="tool-container">
         tools
     </div>
