@@ -2,3 +2,16 @@
     height: 100%;
     overflow: hidden;
 }
+
+.flex-container {
+    height: 90%; 
+    display: flex;
+}
+
+.sidebar-container {
+    flex: 0 0 20%;
+}
+
+.graph-container {
+    flex: 0 0 80%;
+}
