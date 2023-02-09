@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
+import { InitializationService, ToolGroup } from '../../services/initialization.service';
 
 @Component({
     selector: 'toolPane',
@@ -7,11 +8,20 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
     styleUrls: ['./toolPane.component.css']
 })
 export class ToolPaneComponent implements OnInit {
-    constructor() { }
+    
+    toolGroups: ToolGroup[] = []
+    selectedToolGroup: ToolGroup = {groupLabel: "", tools: []}
+    selectedToolGroupIndex = 0
 
-    ngOnInit() { }
+    constructor(private initializationService: InitializationService) { }
+
+    ngOnInit() { 
+        this.toolGroups = this.initializationService.toolGroups
+        this.selectedToolGroup = this.toolGroups[this.selectedToolGroupIndex]
+    }
 
     tabChangeHandler(event: MatTabChangeEvent) {
-        console.log(event)
+        this.selectedToolGroupIndex = event.index
+        this.selectedToolGroup = this.toolGroups[this.selectedToolGroupIndex]
     }
 }

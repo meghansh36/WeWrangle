@@ -1,0 +1,16 @@
+.tool-body {
+
+    height: 40px;
+    width: 40px;
+    background-color: #666;
+    margin: auto;
+
+}
+
+.tool-label {
+    text-align: center;
+}
+
+.container {
+    margin-right: 20px;
+}

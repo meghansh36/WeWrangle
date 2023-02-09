@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core'
 import { CytoscapeOptions } from 'cytoscape'
 
+export interface ToolGroup {
+
+    groupLabel: string,
+    tools: Array<{toolName: string, style: {}}>
+
+}
+
 @Injectable()
 export class InitializationService {
 
@@ -29,7 +36,9 @@ export class InitializationService {
                 style: {
                 'background-color': '#666',
                 'label': 'data(id)',
-                'shape': 'round-rectangle'
+                'shape': 'rectangle',
+                'width': '40px',
+                'height': '40px',
                 }
             },
         
@@ -37,8 +46,8 @@ export class InitializationService {
                 selector: 'edge',
                 style: {
                     'width': 3,
-                    'line-color': '#ccc',
-                    'target-arrow-color': '#ccc',
+                    'line-color': '#666',
+                    'target-arrow-color': '#666',
                     'target-arrow-shape': 'triangle',
                     'curve-style': 'taxi'
                 }
@@ -50,17 +59,55 @@ export class InitializationService {
 
     }
 
-    toolGroups = [
+    toolGroups: ToolGroup[] = [
         {
-            label: 'Input',
+            groupLabel: 'Input',
+            tools: [
+                {
+                    toolName: 'CSV Input',
+                    style: {
+                        'background-color': '#666',
+                        'width': '40px',
+                        'height': '40px',
+                    }
+                }
+            ]
         }, 
 
         {
-            label: 'Transform'
+            groupLabel: 'Transform',
+            tools: [
+                {
+                    toolName: 'Filter',
+                    style: {
+                        'background-color': '#666',
+                        'width': '40px',
+                        'height': '40px',
+                    }
+                },
+                {
+                    toolName: 'Function',
+                    style: {
+                        'background-color': '#666',
+                        'width': '40px',
+                        'height': '40px',
+                    }
+                }
+            ]
         }, 
 
         {
-            label: 'Output'
+            groupLabel: 'Output',
+            tools: [
+                {
+                    toolName: 'CSV Output',
+                    style: {
+                        'background-color': '#666',
+                        'width': '40px',
+                        'height': '40px',
+                    }
+                }
+            ]
         }
     ]
 

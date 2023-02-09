@@ -8,9 +8,10 @@ import { ConfigSidebarComponent } from './components/configSidebar/configSidebar
 import { GraphAreaComponent } from './components/graphArea/graphArea.component'
 import { InitializationService } from './services/initialization.service'
 import {MatTabsModule} from '@angular/material/tabs';
+import { ToolComponent } from './components/tool/tool.component';
 
 @NgModule({
-  declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent],
+  declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent, ToolComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

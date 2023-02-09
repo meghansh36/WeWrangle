@@ -3,14 +3,19 @@
     
     <div class="tooltab-container">
         <mat-tab-group (selectedTabChange)="tabChangeHandler($event)">
-            <mat-tab label="Input"></mat-tab>
+
+            <mat-tab *ngFor="let item of toolGroups" label={{item.groupLabel}} ></mat-tab>
+
+            <!-- <mat-tab label="Input"></mat-tab>
             <mat-tab label="Transform"></mat-tab>
-            <mat-tab label="Output"></mat-tab>
+            <mat-tab label="Output"></mat-tab> -->
         </mat-tab-group>
     </div>
 
     <div class="tool-container">
-        tools
+        <div class="tool" *ngFor="let item of selectedToolGroup.tools">
+            <tool [toolName]="item.toolName" [styleObj]="item.style"></tool>
+        </div>
     </div>
 
 </div>

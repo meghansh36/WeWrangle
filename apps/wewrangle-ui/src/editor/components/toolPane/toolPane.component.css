@@ -8,3 +8,10 @@
 {
   height: 25px !important;
 }
+
+.tool-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  
+}
