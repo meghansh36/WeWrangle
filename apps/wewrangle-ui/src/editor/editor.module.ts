@@ -9,13 +9,15 @@ import { GraphAreaComponent } from './components/graphArea/graphArea.component'
 import { InitializationService } from './services/initialization.service'
 import {MatTabsModule} from '@angular/material/tabs';
 import { ToolComponent } from './components/tool/tool.component';
+import { DndModule } from 'ngx-drag-drop';
 
 @NgModule({
   declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent, ToolComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatTabsModule
+    MatTabsModule,
+    DndModule
   ], 
   providers: [InitializationService]
 })
