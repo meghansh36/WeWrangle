@@ -2,3 +2,24 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.popper-handle {
+    height:20px;
+}
+
+.popper-handle::before,
+.popper-handle::after {
+    position:absolute;
+    display:block;
+    content:"";
+    border:10px solid transparent; /*Adjust chevron size*/
+}
+
+.popper-handle::before {
+    left:0;
+    border-left-color:#b00; /*popper-handle Color*/
+}
+.popper-handle::after {
+    left:-10px; /*Adjust thickness*/
+    border-left-color:transparent; /*Match chevron background colour*/
+}

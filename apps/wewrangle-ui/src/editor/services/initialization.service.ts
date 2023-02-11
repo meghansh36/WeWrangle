@@ -43,6 +43,19 @@ export class InitializationService {
                     'target-arrow-shape': 'triangle',
                     'curve-style': 'taxi'
                 }
+            },
+
+            {
+                selector: '.eh-handle',
+                style: {
+                  'background-color': 'red',
+                  'width': 12,
+                  'height': 12,
+                  'shape': 'ellipse',
+                  'overlay-opacity': 0,
+                  'border-width': 12, // makes the handle easier to hit
+                  'border-opacity': 0
+                }
             }
           ],
         

@@ -1,4 +1,4 @@
-import {Injectable, OnModuleInit} from '@nestjs/common'
+import {Injectable} from '@nestjs/common'
 import {ModuleRef} from '@nestjs/core'
 // import { EndBlock } from './endblock'
 
@@ -7,7 +7,7 @@ export class RunnerService{
 
     // private endBlockService: EndBlock
 
-    constructor(private moduleRef: ModuleRef) {}
+    constructor() {}
 
     // async onModuleInit() {
     //     this.endBlockService = await this.moduleRef.create(EndBlock)
