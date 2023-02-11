@@ -13,16 +13,8 @@ export class InitializationService {
 
     initialGraphSettings: CytoscapeOptions = {
         elements: [ // list of graph elements to start with
-            { // node a
-              data: { id: 'a' }
-            },
-            { // node b
-              data: { id: 'b' }
-            },
-            { // edge ab
-              data: { id: 'ab', source: 'a', target: 'b' }
-            }
-          ],
+        
+        ],
         
         layout: {
             name: 'grid',
@@ -34,7 +26,7 @@ export class InitializationService {
             {
                 selector: 'node',
                 style: {
-                'background-color': '#666',
+                // 'background-color': '#666',
                 'label': 'data(id)',
                 'shape': 'rectangle',
                 'width': '40px',
@@ -66,7 +58,7 @@ export class InitializationService {
                 {
                     toolName: 'CSV Input',
                     style: {
-                        'background-color': '#666',
+                        'background-color': '#83ff73',
                         'width': '40px',
                         'height': '40px',
                     }
@@ -102,7 +94,7 @@ export class InitializationService {
                 {
                     toolName: 'CSV Output',
                     style: {
-                        'background-color': '#666',
+                        'background-color': '#83ff73',
                         'width': '40px',
                         'height': '40px',
                     }

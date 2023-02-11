@@ -40,6 +40,10 @@ export class GraphAreaComponent implements OnInit {
             renderedPosition: {
                 x: event.event.offsetX - (event.event.target as HTMLElement).offsetLeft,
                 y: event.event.offsetY - (event.event.target as HTMLElement).offsetTop,
+            },
+            
+            style: {
+                'background-color': event.data.style['background-color']
             }
         });
 
