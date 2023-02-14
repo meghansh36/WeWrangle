@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core'
 import { Component } from 'rete'
-import { NumComponent } from '../components/toolComponents/inputCSV.component'
+import { FilterComponent } from '../components/toolComponents/filter.component'
+import { FunctionComponent } from '../components/toolComponents/function.component'
+import { InputCSVComponent } from '../components/toolComponents/inputCSV.component'
+import { OutputCSVComponent } from '../components/toolComponents/outputCSV.component'
 
 export interface ToolGroup {
 
     groupLabel: string,
-    tools: Array<{toolName: string, style: {}}>
+    tools: Array<{toolName: string, style: {}, toolLabel: string}>
 
 }
 
@@ -13,7 +16,11 @@ export interface ToolGroup {
 export class InitializationService {
 
     nodeComponents: {[key: string]: Component} = {
-        inputCSV: new NumComponent()
+        inputCSV: new InputCSVComponent,
+        outputCSV: new OutputCSVComponent,
+        function: new FunctionComponent,
+        filter: new FilterComponent
+
     }
 
     toolGroups: ToolGroup[] = [
@@ -22,6 +29,7 @@ export class InitializationService {
             tools: [
                 {
                     toolName: 'inputCSV',
+                    toolLabel: "CSV Input",
                     style: {
                         'background-color': '#83ff73',
                         'width': '40px',
@@ -35,20 +43,22 @@ export class InitializationService {
             groupLabel: 'Transform',
             tools: [
                 {
-                    toolName: 'Filter',
+                    toolName: 'filter',
                     style: {
                         'background-color': '#666',
                         'width': '40px',
                         'height': '40px',
-                    }
+                    },
+                    toolLabel: "Filter",
                 },
                 {
-                    toolName: 'Function',
+                    toolName: 'function',
                     style: {
                         'background-color': '#666',
                         'width': '40px',
                         'height': '40px',
-                    }
+                    },
+                    toolLabel: "Function",
                 }
             ]
         }, 
@@ -57,12 +67,13 @@ export class InitializationService {
             groupLabel: 'Output',
             tools: [
                 {
-                    toolName: 'CSV Output',
+                    toolName: 'outputCSV',
                     style: {
                         'background-color': '#83ff73',
                         'width': '40px',
                         'height': '40px',
-                    }
+                    },
+                    toolLabel: "CSV Output",
                 }
             ]
         }

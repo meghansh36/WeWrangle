@@ -11,6 +11,7 @@ export class ToolComponent implements OnInit {
 
     @Input('toolName') toolName: string | null = null;
     @Input('styleObj') style: object | null = null;
+    @Input('toolLabel') toolLabel: string | null = null
 
     data: {toolName: string| null, style: object| null}
     constructor() { }

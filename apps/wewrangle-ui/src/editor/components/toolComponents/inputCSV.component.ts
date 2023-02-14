@@ -1,15 +1,13 @@
 import { Component, Output } from "rete";
-// import { numSocket } from "../sockets";
-// import { NumControl } from "../controls/number-control";
-import { Socket } from "rete";
+import socket from "../../services/socket.service";
 
-export class NumComponent extends Component {
+export class InputCSVComponent extends Component {
   constructor() {
-    super("Input CSV");
+    super("CSV Input");
   }
 
   builder(node: any) {
-    const out1 = new Output("num", "Output", new Socket('Any Type'));
+    const out1 = new Output("any", "Output", socket);
 
     return node.addOutput(out1);
   }

@@ -14,7 +14,7 @@
 
     <div class="tool-container">
         <div class="tool" *ngFor="let item of selectedToolGroup.tools">
-            <tool [toolName]="item.toolName" [styleObj]="item.style"></tool>
+            <tool [toolName]="item.toolName" [styleObj]="item.style" [toolLabel]="item.toolLabel"></tool>
         </div>
     </div>
 

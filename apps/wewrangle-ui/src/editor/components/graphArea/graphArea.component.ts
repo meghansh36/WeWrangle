@@ -5,7 +5,6 @@ import { DndDropEvent } from 'ngx-drag-drop';
 import { InitializationService } from '../../services/initialization.service';
 import { AngularRenderPlugin } from "rete-angular-render-plugin";
 // import { zoomAt } from "rete-area-plugin";
-import { NumComponent } from '../toolComponents/inputCSV.component'
 
 // const edgehandles = require('cytoscape-edgehandles')
 // const popper = require('cytoscape-popper');
