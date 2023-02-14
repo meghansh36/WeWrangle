@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EffectAllowed } from 'ngx-drag-drop';
 
 @Component({
     selector: 'tool',

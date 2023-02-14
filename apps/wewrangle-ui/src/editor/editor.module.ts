@@ -9,7 +9,6 @@ import { GraphAreaComponent } from './components/graphArea/graphArea.component'
 import { InitializationService } from './services/initialization.service'
 import {MatTabsModule} from '@angular/material/tabs';
 import { ToolComponent } from './components/tool/tool.component';
-import { DndModule } from 'ngx-drag-drop';
 import { ReteModule } from "rete-angular-render-plugin";
 
 @NgModule({
@@ -18,7 +17,6 @@ import { ReteModule } from "rete-angular-render-plugin";
     CommonModule,
     RouterModule.forChild(routes),
     MatTabsModule,
-    DndModule,
     ReteModule
   ], 
   providers: [InitializationService],
