@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as cy from 'cytoscape'
 import { DndDropEvent } from 'ngx-drag-drop';
 import { InitializationService } from '../../services/initialization.service';
 
-const edgehandles = require('cytoscape-edgehandles')
-const popper = require('cytoscape-popper');
+// const edgehandles = require('cytoscape-edgehandles')
+// const popper = require('cytoscape-popper');
 
-cy.use(edgehandles)
-cy.use(popper)
+// cy.use(edgehandles)
+// cy.use(popper)
+
+
 
 @Component({
     selector: 'graph-area',
@@ -15,7 +17,16 @@ cy.use(popper)
     styleUrls: ['./graphArea.component.css']
 })
 
-export class GraphAreaComponent implements OnInit {
+export class GraphAreaComponent implements OnInit, AfterViewInit{
+
+
+    @ViewChild("nodeEditor") el: ElementRef | null = null
+    editor = null;
+
+
+    
+
+
     
     cytoscape:any = cy({})
     nodeCount = 1

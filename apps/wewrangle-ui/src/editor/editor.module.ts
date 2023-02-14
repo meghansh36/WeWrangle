@@ -10,6 +10,8 @@ import { InitializationService } from './services/initialization.service'
 import {MatTabsModule} from '@angular/material/tabs';
 import { ToolComponent } from './components/tool/tool.component';
 import { DndModule } from 'ngx-drag-drop';
+import { ReteModule } from "rete-angular-render-plugin";
+
 
 @NgModule({
   declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent, ToolComponent],
@@ -17,7 +19,8 @@ import { DndModule } from 'ngx-drag-drop';
     CommonModule,
     RouterModule.forChild(routes),
     MatTabsModule,
-    DndModule
+    DndModule,
+    ReteModule
   ], 
   providers: [InitializationService]
 })
