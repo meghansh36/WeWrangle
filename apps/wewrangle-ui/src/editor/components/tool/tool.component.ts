@@ -9,18 +9,17 @@ import { EffectAllowed } from 'ngx-drag-drop';
 
 export class ToolComponent implements OnInit {
 
-    @Input('toolName') toolName: string | undefined = undefined;
-    @Input('styleObj') style: object | undefined = undefined;
+    @Input('toolName') toolName: string | null = null;
+    @Input('styleObj') style: object | null = null;
 
-    draggable: {data: Object, effectAllowed: EffectAllowed, handle: boolean} = {data: {}, effectAllowed: 'copy', handle: false}
-
+    data: {toolName: string| null, style: object| null}
     constructor() { }
 
     ngOnInit() { 
-        this.draggable = {
-            data: {toolName: this.toolName, style: this.style},
-            effectAllowed: "copy",
-            handle: false
-          };
+        this.data = {toolName: this.toolName, style: this.style}
+    }
+
+    onDragStart(event: DragEvent) {
+        event.dataTransfer?.setData('data', JSON.stringify(this.data))
     }
 }

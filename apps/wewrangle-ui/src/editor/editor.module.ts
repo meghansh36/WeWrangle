@@ -12,7 +12,6 @@ import { ToolComponent } from './components/tool/tool.component';
 import { DndModule } from 'ngx-drag-drop';
 import { ReteModule } from "rete-angular-render-plugin";
 
-
 @NgModule({
   declarations: [EditorComponent, ToolPaneComponent, ConfigSidebarComponent, GraphAreaComponent, ToolComponent],
   imports: [
@@ -22,6 +21,7 @@ import { ReteModule } from "rete-angular-render-plugin";
     DndModule,
     ReteModule
   ], 
-  providers: [InitializationService]
+  providers: [InitializationService],
+  entryComponents: []
 })
 export class EditorModule { }

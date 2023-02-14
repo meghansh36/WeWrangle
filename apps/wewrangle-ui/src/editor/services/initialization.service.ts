@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
-import { CytoscapeOptions } from 'cytoscape'
+import { Component } from 'rete'
+import { NumComponent } from '../components/toolComponents/inputCSV.component'
 
 export interface ToolGroup {
 
@@ -11,57 +12,8 @@ export interface ToolGroup {
 @Injectable()
 export class InitializationService {
 
-    initialGraphSettings: CytoscapeOptions = {
-        elements: [ // list of graph elements to start with
-        
-        ],
-        
-        layout: {
-            name: 'grid',
-            rows: 1,
-            padding: 0
-        },
-
-        style: [ // the stylesheet for the graph
-            {
-                selector: 'node',
-                style: {
-                // 'background-color': '#666',
-                'label': 'data(id)',
-                'shape': 'rectangle',
-                'width': '40px',
-                'height': '40px',
-                }
-            },
-        
-            {
-                selector: 'edge',
-                style: {
-                    'width': 3,
-                    'line-color': '#666',
-                    'target-arrow-color': '#666',
-                    'target-arrow-shape': 'triangle',
-                    'curve-style': 'taxi'
-                }
-            },
-
-            {
-                selector: '.eh-handle',
-                style: {
-                  'background-color': 'red',
-                  'width': 12,
-                  'height': 12,
-                  'shape': 'ellipse',
-                  'overlay-opacity': 0,
-                  'border-width': 12, // makes the handle easier to hit
-                  'border-opacity': 0
-                }
-            }
-          ],
-        
-        selectionType: 'single'
-
-
+    nodeComponents: {[key: string]: Component} = {
+        inputCSV: new NumComponent()
     }
 
     toolGroups: ToolGroup[] = [
@@ -69,7 +21,7 @@ export class InitializationService {
             groupLabel: 'Input',
             tools: [
                 {
-                    toolName: 'CSV Input',
+                    toolName: 'inputCSV',
                     style: {
                         'background-color': '#83ff73',
                         'width': '40px',

@@ -1,4 +1,4 @@
-<div class="container" [dndDraggable]="draggable.data" [dndEffectAllowed]="draggable.effectAllowed">
+<div class="container" draggable="true" (dragstart)="onDragStart($event)">
     <div class="tool-body">
 
     </div>

@@ -1,5 +1,7 @@
-<div class="container" dndDropzone (dndDrop)="onDrop($event)">
+<div class="container" dropzone="copy" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
 
-    <div #nodeEditor class="node-editor"></div>
+    <div #nodeEditor class="node-editor" >
+
+    </div>
 
 </div>
