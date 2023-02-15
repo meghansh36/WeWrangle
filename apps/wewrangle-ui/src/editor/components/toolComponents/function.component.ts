@@ -7,8 +7,8 @@ export class FunctionComponent extends Component {
   }
 
   builder(node: any) {
-    const in1 = new Input('any', "Input", socket)
-    const out1 = new Output("any", "Output", socket);
+    const in1 = new Input('input', "Input", socket)
+    const out1 = new Output("output", "Output", socket);
 
     return node.addOutput(out1).addInput(in1);
   }

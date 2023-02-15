@@ -2,6 +2,8 @@ import { Controller, Get } from '@nestjs/common';
 
 import { AppService } from './app.service';
 import { RunnerService } from './process/runner'
+import build from './process/input'
+import { writeFile } from 'node:fs'
 
 @Controller()
 export class AppController {
@@ -9,13 +11,14 @@ export class AppController {
 
   @Get()
   async getData() {
-    await this.runnerService.run()
+    
+    let buildString = build({filePath: 'file.csv'})
+    console.log(__dirname)
+    writeFile(__dirname + '/runner/input.component.ts', buildString, 'utf-8', (err) => {
 
-    // inputStream.subscribe({
-    //   next: (v) => console.log(`observerA: ${JSON.stringify(v)}`)
-    // })
 
+      console.log(err)
+    })
 
-    // inputStream.connect()
   }
 }

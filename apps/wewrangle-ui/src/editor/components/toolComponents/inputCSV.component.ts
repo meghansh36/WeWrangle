@@ -7,7 +7,7 @@ export class InputCSVComponent extends Component {
   }
 
   builder(node: any) {
-    const out1 = new Output("any", "Output", socket);
+    const out1 = new Output("output", "Output", socket);
 
     return node.addOutput(out1);
   }

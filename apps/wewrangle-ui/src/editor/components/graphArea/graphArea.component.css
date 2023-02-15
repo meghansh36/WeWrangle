@@ -1,6 +1,7 @@
 .container {
 
     height: 100%;
+    position: relative;
     background: radial-gradient(#000 1px, transparent 1px) 0 0 / 30px 30px;
 
 }
@@ -8,4 +9,12 @@
 #cytoscape-container {
     height: 100%
 }
+
+.run-button {
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    top: 0;
+}
+
 

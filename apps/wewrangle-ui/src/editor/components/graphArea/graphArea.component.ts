@@ -3,6 +3,7 @@ import { NodeEditor } from 'rete'
 import ConnectionPlugin from "rete-connection-plugin";
 import { InitializationService } from '../../services/initialization.service';
 import { AngularRenderPlugin } from "rete-angular-render-plugin";
+import { v4 as uuidv4 } from 'uuid'
 // import { zoomAt } from "rete-area-plugin";
 
 // const edgehandles = require('cytoscape-edgehandles')
@@ -35,15 +36,18 @@ export class GraphAreaComponent implements OnInit, AfterViewInit{
     
         // const components = [new NumComponent()];
     
-        this.editor = new NodeEditor("demo@0.2.0", container);
+        this.editor = new NodeEditor("workflow@0.1.0", container);
         this.editor.use(ConnectionPlugin);
-        console.log("AngularRenderPlugin", AngularRenderPlugin);
         this.editor.use(AngularRenderPlugin);
         
     
         Object.keys(this.initializationService.nodeComponents).forEach((c: string) => {
           this.editor.register(this.initializationService.nodeComponents[c]);
         });
+
+        this.editor.on('nodeselected', (e:any) => {
+            console.log(e)
+        })
         
         
         // // zoomAt(editor);
@@ -63,8 +67,21 @@ export class GraphAreaComponent implements OnInit, AfterViewInit{
         console.log(x,y, data)
         
         const newNode = await this.initializationService.nodeComponents[data.toolName].createNode()
+        
+        newNode.data = {
+            toolName: data.toolName,
+            id: uuidv4(),
+            configs : {}
+        }
         newNode.position = [x, y]
         this.editor.addNode(newNode)
         this.editor.view.resize()
     }
+
+    runWorkflow() {
+        console.log(this.editor.toJSON())
+    }
+
+    
+
 }
