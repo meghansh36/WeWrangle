@@ -1,6 +1,5 @@
 
-
-const build = (params: {filePath?: string}) => {
+const build = (params: any) => {
 
     return `import * as dataForge from 'data-forge'
     import 'data-forge-fs';

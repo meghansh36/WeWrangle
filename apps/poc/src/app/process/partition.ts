@@ -1,10 +1,10 @@
-import { filter } from 'rxjs'
-import * as incomingStream from './input'
+// import { filter } from 'rxjs'
+// import * as incomingStream from './input'
 
-export function execute() {
+// export function execute() {
 
-    let inputStream = incomingStream.execute()
+//     let inputStream = incomingStream.execute()
 
-    return inputStream.pipe(filter(x => x['hello'] === '1'))
+//     return inputStream.pipe(filter(x => x['hello'] === '1'))
 
-}
+// }
